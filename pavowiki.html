@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pavowiki: comandos de pavocoins</title>
+<meta name="description" content="Todos los comandos de pavocoins: cómo se usan, ejemplos y reglas.">
+<meta name="theme-color" content="#0E4A4F">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Rubik:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/fan.css">
+<link rel="stylesheet" href="assets/css/pages/wiki.css">
+</head>
+<body class="page-wiki">
+
+<nav class="topbar wrap" aria-label="Páginas">
+  <a class="tab" href="index.html">Comandos</a>
+  <a class="tab" href="pavowiki.html" aria-current="page">Pavowiki</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Pavowiki</h1>
+      <p class="lead">Todo lo que puedes hacer con tus pavocoins: cada comando, cómo se usa y las reglas de cada uno.</p>
+      <p class="hint">Toca cualquier comando para copiarlo. Toca una pluma del pavo para saltar a su sección.</p>
+      <ul class="jump" id="jump" aria-label="Secciones"></ul>
+    </div>
+
+    <!-- El pavo lo dibuja assets/js/components/fan.js -->
+    <svg id="fan" viewBox="0 0 600 520" role="group" aria-label="Un pavo con la cola abierta. Cada pluma lleva a una sección de la wiki."></svg>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== PRIMER DÍA ===================== -->
+  <section class="sec theme-gold" id="inicio">
+    <div class="wrap">
+      <div class="sec-head"><span class="ico" aria-hidden="true">🐣</span><h2>Tu primer día</h2></div>
+      <p class="sec-intro">Los pavocoins son la moneda del canal. Se ganan estando activo en el chat y con unos pocos comandos. Y de vez en cuando, muy de vez en cuando, aparece un pavo dorado.</p>
+
+      <ol class="steps">
+        <li>
+          <button type="button" class="k" data-copy="$pavo">$pavo</button>
+          <p>Reclama tu primer premio. Puedes ganar, perder o no encontrar nada.</p>
+        </li>
+        <li>
+          <button type="button" class="k" data-copy="$diario">$diario</button>
+          <p>Cobra tu bono del día y empieza tu racha.</p>
+        </li>
+        <li>
+          <button type="button" class="k" data-copy="$banco depositar 100">$banco depositar 100</button>
+          <p>Guarda lo que no vas a jugar. El banco te paga interés cada día.</p>
+        </li>
+        <li>
+          <button type="button" class="k" data-copy="$slots 10">$slots 10</button>
+          <p>Apuesta lo que te sobre en la tragamonedas o rétate a un duelo.</p>
+        </li>
+      </ol>
+
+      <article class="cmd theme-gold">
+        <p class="what"><b>Antes de empezar</b></p>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Regla</th><th>Detalle</th></tr></thead>
+            <tbody>
+              <tr><td>Prefijo</td><td>Todos los comandos empiezan con <span class="k">$</span></td></tr>
+              <tr><td>Cantidades</td><td>Puedes escribir <span class="k">1000</span> o <span class="k">1.000</span></td></tr>
+              <tr><td>Cooldown</td><td>Si un comando todavía está en espera, el bot no responde. Así no se llena el chat.</td></tr>
+              <tr><td>Otros usuarios</td><td>Los comandos con usuario necesitan que esa persona haya escrito alguna vez en el canal.</td></tr>
+              <tr><td>Dónde funciona</td><td>Solo en los canales que tienen los pavocoins activados.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== GANAR ===================== -->
+  <section class="sec theme-gold" id="ganar">
+    <div class="wrap">
+      <div class="sec-head"><span class="ico" aria-hidden="true">🪙</span><h2>Ganar pavocoins</h2></div>
+      <p class="sec-intro">Reclama cada 30 minutos con <span class="k">$pavo</span> y una vez al día con <span class="k">$diario</span>. Cuantos más días seguidos, más sube el premio.</p>
+
+      <div class="cards">
+        <article class="cmd">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$pavo" title="Toca para copiar">$pavo</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $reclamar, $claim</span>
+          </header>
+          <p class="what">Reclamas cada 30 minutos. Puedes ganar, perder o no encontrar nada, y cada vez cuenta una historia distinta.</p>
+          <div>
+            <p class="tt">Cómo se usa</p>
+            <div class="tw"><table>
+              <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+              <tbody><tr><td><span class="k">$pavo</span></td><td>Reclama lo que te toque</td></tr></tbody>
+            </table></div>
+          </div>
+          <div>
+            <p class="tt">Reglas</p>
+            <div class="tw"><table>
+              <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+              <tbody>
+                <tr><td>Tiempo entre reclamos</td><td>30 minutos</td></tr>
+                <tr><td>Resultados posibles</td><td>Ganas, pierdes o no pasa nada</td></tr>
+                <tr><td>Si todavía no toca</td><td>El bot no responde</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </article>
+
+        <article class="cmd wide">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$diario" title="Toca para copiar">$diario</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $daily</span>
+          </header>
+          <p class="what">Un bono cada 24 horas que crece con la racha. Si te saltas más de 48 horas, la racha vuelve a empezar.</p>
+          <div class="cards cards--tight">
+            <div>
+              <p class="tt">Reglas</p>
+              <div class="tw"><table>
+                <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+                <tbody>
+                  <tr><td>Tiempo entre reclamos</td><td>24 horas</td></tr>
+                  <tr><td>Premio del día 1</td><td>50 pavocoins</td></tr>
+                  <tr><td>Suma por cada día seguido</td><td>10 pavocoins</td></tr>
+                  <tr><td>La racha deja de subir</td><td>En el día 14</td></tr>
+                  <tr><td>Bonus semanal</td><td>100 extra cada 7 días seguidos</td></tr>
+                  <tr><td>La racha se reinicia</td><td>Si pasas 48 horas sin reclamar</td></tr>
+                </tbody>
+              </table></div>
+            </div>
+            <div>
+              <p class="tt">Cuánto cobras según tu racha</p>
+              <div class="tw"><table>
+                <thead><tr><th>Día</th><th>Premio</th></tr></thead>
+                <tbody>
+                  <tr><td>Día 1</td><td><div class="barrow"><span>50</span><i class="bar" style="--w:18%"></i></div></td></tr>
+                  <tr><td>Día 2</td><td><div class="barrow"><span>60</span><i class="bar" style="--w:21%"></i></div></td></tr>
+                  <tr><td>Día 3</td><td><div class="barrow"><span>70</span><i class="bar" style="--w:25%"></i></div></td></tr>
+                  <tr><td>Día 5</td><td><div class="barrow"><span>90</span><i class="bar" style="--w:32%"></i></div></td></tr>
+                  <tr><td>Día 7 (bonus)</td><td><div class="barrow"><span>210</span><i class="bar wk" style="--w:75%"></i></div></td></tr>
+                  <tr><td>Día 10</td><td><div class="barrow"><span>140</span><i class="bar" style="--w:50%"></i></div></td></tr>
+                  <tr><td>Día 14 (bonus)</td><td><div class="barrow"><span>280</span><i class="bar wk" style="--w:100%"></i></div></td></tr>
+                  <tr><td>Día 21 (bonus)</td><td><div class="barrow"><span>280</span><i class="bar wk" style="--w:100%"></i></div></td></tr>
+                </tbody>
+              </table></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SALDO Y RANKING ===================== -->
+  <section class="sec theme-aqua" id="saldo">
+    <div class="wrap">
+      <div class="sec-head"><span class="ico" aria-hidden="true">🏆</span><h2>Saldo y ranking</h2></div>
+      <p class="sec-intro">Mira cuánto tienes, quién va primero y en qué nivel estás.</p>
+
+      <div class="cards">
+        <article class="cmd">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$pavocoins" title="Toca para copiar">$pavocoins</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $pavos, $pc</span>
+          </header>
+          <p class="what">Muestra tu saldo o el de otra persona.</p>
+          <div>
+            <p class="tt">Cómo se usa</p>
+            <div class="tw"><table>
+              <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+              <tbody>
+                <tr><td><span class="k">$pavocoins</span></td><td>Tu saldo</td></tr>
+                <tr><td><span class="k">$pavocoins usuario</span></td><td>El saldo de otra persona</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <div>
+            <p class="tt">Pruébalo</p>
+            <div class="ex">
+              <button type="button" class="k" data-copy="$pavocoins">$pavocoins</button>
+              <button type="button" class="k" data-copy="$pavos @Ana">$pavos @Ana</button>
+            </div>
+          </div>
+          <p class="note">La otra persona tiene que haber escrito alguna vez en este canal.</p>
+          <p class="cool">Espera entre usos: 5 segundos por persona.</p>
+        </article>
+
+        <article class="cmd">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$top" title="Toca para copiar">$top</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $toppavos</span>
+          </header>
+          <p class="what">Los 5 usuarios con más pavocoins del canal.</p>
+          <div>
+            <p class="tt">Cómo se usa</p>
+            <div class="tw"><table>
+              <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+              <tbody><tr><td><span class="k">$top</span></td><td>Muestra el ranking de los 5 primeros</td></tr></tbody>
+            </table></div>
+          </div>
+          <div>
+            <p class="tt">Así responde</p>
+            <p class="note"><span class="k k--wrap">Top pavocoins 1 Ana 1144, 2 Beto 1002, 3 Caro 786, 4 Dani 637, 5 Eli 620</span></p>
+          </div>
+          <p class="cool">Espera entre usos: 30 segundos para todo el canal.</p>
+        </article>
+
+        <article class="cmd wide">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$rank" title="Toca para copiar">$rank</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $nivel, $puesto</span>
+          </header>
+          <p class="what">Tu puesto en el ranking, lo que te falta para pasar a quien va justo arriba y tu nivel. El nivel depende de tu riqueza total: saldo + banco − deuda.</p>
+          <div>
+            <p class="tt">Los 6 niveles</p>
+            <ol class="stairs" aria-label="Niveles de menor a mayor">
+              <li style="--h:30%;--w:30%;--c:#F3D99B"><b>Huevo</b><span>desde 0</span></li>
+              <li style="--h:42%;--w:42%;--c:#BDE3C3"><b>Pavito</b><span>desde 100</span></li>
+              <li style="--h:55%;--w:55%;--c:#8ED8CE"><b>Pavo</b><span>desde 500</span></li>
+              <li style="--h:70%;--w:70%;--c:#F6B93B"><b>Pavo Real</b><span>desde 2000</span></li>
+              <li style="--h:85%;--w:85%;--c:#E8923A"><b>Pavo Dorado</b><span>desde 10000</span></li>
+              <li style="--h:100%;--w:100%;--c:#E5493A"><b>Gran Pavo</b><span>desde 50000</span></li>
+            </ol>
+          </div>
+          <p class="cool">Espera entre usos: 10 segundos por persona.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== JUEGOS ===================== -->
+  <section class="sec theme-red" id="juegos">
+    <div class="wrap">
+      <div class="sec-head"><span class="ico" aria-hidden="true">🎰</span><h2>Juegos</h2></div>
+      <p class="sec-intro">Apuesta contra la máquina o contra otra persona del chat. Lo que ganas o pierdes sale de tu saldo.</p>
+
+      <div class="cards">
+        <article class="cmd wide">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$slots" title="Toca para copiar">$slots</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $slot, $tragaperras</span>
+          </header>
+          <p class="what">La tragamonedas de pavocoins. Salen tres símbolos y el resultado decide cuánto cobras.</p>
+
+          <div class="slot">
+            <div class="reels" id="reels" aria-hidden="true"><span>🦃</span><span>🍗</span><span>🌽</span></div>
+            <button class="btn" id="spin" type="button">Probar una tirada</button>
+            <p id="slot-msg" role="status">Es solo una demo, no gasta pavocoins de verdad.</p>
+          </div>
+
+          <div class="cards cards--tight">
+            <div>
+              <p class="tt">Cómo se usa</p>
+              <div class="tw"><table>
+                <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="k">$slots</span></td><td>Apuestas 10 pavocoins</td></tr>
+                  <tr><td><span class="k">$slots cantidad</span></td><td>Apuestas esa cantidad</td></tr>
+                  <tr><td><span class="k">$slots todo</span></td><td>Apuestas todo tu saldo, hasta el máximo</td></tr>
+                </tbody>
+              </table></div>
+              <div class="ex mt-sm">
+                <button type="button" class="k" data-copy="$slots 50">$slots 50</button>
+                <button type="button" class="k" data-copy="$slots todo">$slots todo</button>
+              </div>
+              <div class="tw mt-md"><table>
+                <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+                <tbody>
+                  <tr><td>Apuesta por defecto</td><td>10 pavocoins</td></tr>
+                  <tr><td>Apuesta mínima</td><td>5 pavocoins</td></tr>
+                  <tr><td>Apuesta máxima</td><td>500 pavocoins</td></tr>
+                  <tr><td>Espera entre tiradas</td><td>15 segundos por persona</td></tr>
+                </tbody>
+              </table></div>
+            </div>
+            <div>
+              <p class="tt">Qué cobras</p>
+              <div class="tw"><table>
+                <thead><tr><th>Resultado</th><th>Pago</th></tr></thead>
+                <tbody>
+                  <tr><td>🦃 🦃 🦃 <b>Jackpot</b></td><td>20 veces tu apuesta</td></tr>
+                  <tr><td>Cualquier otro triple</td><td>8 veces tu apuesta</td></tr>
+                  <tr><td>Dos iguales</td><td>Recuperas tu apuesta</td></tr>
+                  <tr><td>Tres distintos</td><td>Pierdes la apuesta</td></tr>
+                </tbody>
+              </table></div>
+              <p class="note mt-md">Los símbolos son 🦃 🍗 🌽 🥧 y 🍂.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="cmd wide">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$duelo" title="Toca para copiar">$duelo</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $duel, $retar</span>
+          </header>
+          <p class="what">Retas a otra persona a un duelo al 50 por ciento. Quien gana se lleva las dos apuestas.</p>
+          <div class="cards cards--tight">
+            <div>
+              <p class="tt">Cómo se usa</p>
+              <div class="tw"><table>
+                <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="k">$duelo usuario cantidad</span></td><td>Lanzas el reto</td></tr>
+                  <tr><td><span class="k">$duelo aceptar</span></td><td>La persona retada acepta</td></tr>
+                  <tr><td><span class="k">$duelo rechazar</span></td><td>La persona retada rechaza</td></tr>
+                  <tr><td><span class="k">$duelo cancelar</span></td><td>Tú retiras el reto que lanzaste</td></tr>
+                </tbody>
+              </table></div>
+              <div class="ex mt-sm">
+                <button type="button" class="k" data-copy="$duelo @Ana 100">$duelo @Ana 100</button>
+                <button type="button" class="k" data-copy="$duelo aceptar">$duelo aceptar</button>
+              </div>
+            </div>
+            <div>
+              <p class="tt">Reglas</p>
+              <div class="tw"><table>
+                <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+                <tbody>
+                  <tr><td>Tiempo para responder</td><td>20 segundos. Si no, se cancela solo</td></tr>
+                  <tr><td>Apuesta mínima</td><td>5 pavocoins</td></tr>
+                  <tr><td>Apuesta máxima</td><td>500 pavocoins</td></tr>
+                  <tr><td>Probabilidad</td><td>50 por ciento para cada uno</td></tr>
+                  <tr><td>Saldo</td><td>Los dos necesitan tener la apuesta completa</td></tr>
+                  <tr><td>Límites</td><td>No puedes retarte a ti mismo ni tener dos duelos pendientes</td></tr>
+                </tbody>
+              </table></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BANCO ===================== -->
+  <section class="sec theme-bronze" id="banco">
+    <div class="wrap">
+      <div class="sec-head"><span class="ico" aria-hidden="true">🏦</span><h2>Banco y préstamos</h2></div>
+      <p class="sec-intro">Guarda pavocoins para que crezcan, o pide prestado cuando necesites más. Todo lo que tengas en el banco cuenta para tu nivel.</p>
+
+      <div class="cards">
+        <article class="cmd wide">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$banco" title="Toca para copiar">$banco</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $bank</span>
+          </header>
+          <p class="what">Guardas pavocoins y ganas interés cada día. Con 1000 guardados ganas 10 por día.</p>
+          <div class="cards cards--tight">
+            <div>
+              <p class="tt">Cómo se usa</p>
+              <div class="tw"><table>
+                <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="k">$banco</span></td><td>Ver cuánto tienes en el banco y en mano</td></tr>
+                  <tr><td><span class="k">$banco depositar cantidad</span></td><td>Guardar pavocoins</td></tr>
+                  <tr><td><span class="k">$banco retirar cantidad</span></td><td>Sacar pavocoins</td></tr>
+                  <tr><td><span class="k">$banco depositar todo</span></td><td>Guardar todo lo que puedas</td></tr>
+                  <tr><td><span class="k">$banco retirar todo</span></td><td>Sacar todo</td></tr>
+                </tbody>
+              </table></div>
+              <div class="ex mt-sm">
+                <button type="button" class="k" data-copy="$banco depositar 500">$banco depositar 500</button>
+                <button type="button" class="k" data-copy="$banco retirar todo">$banco retirar todo</button>
+              </div>
+            </div>
+            <div>
+              <p class="tt">Reglas</p>
+              <div class="tw"><table>
+                <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+                <tbody>
+                  <tr><td>Interés</td><td>1 por ciento al día</td></tr>
+                  <tr><td>Máximo de interés por día</td><td>50 pavocoins</td></tr>
+                  <tr><td>Máximo guardado por persona</td><td>50000 pavocoins</td></tr>
+                  <tr><td>Cuándo se suma el interés</td><td>Cuando vuelves a usar <span class="k">$banco</span> o <span class="k">$prestamo</span>, con un máximo de 7 días acumulados</td></tr>
+                  <tr><td>Para qué más sirve</td><td>Cuenta para tu nivel y se usa para cobrar deudas vencidas</td></tr>
+                </tbody>
+              </table></div>
+              <p class="cool mt-sm">Espera entre usos: 3 segundos por persona.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="cmd wide">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$prestamo" title="Toca para copiar">$prestamo</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $loan, $deuda, $prestamos</span>
+          </header>
+          <p class="what">Pides prestado al banco y lo devuelves con interés. Solo puedes tener un préstamo a la vez.</p>
+
+          <div>
+            <p class="tt">Un ejemplo con 300 pavocoins</p>
+            <ol class="flow">
+              <li>Pides <span class="k">$prestamo pedir 300</span></li>
+              <li>Recibes 300 y debes 330 (300 más el 10 por ciento)</li>
+              <li>Tienes 24 horas para <span class="k">$prestamo pagar todo</span></li>
+              <li class="bad">Si te pasas, se suman 33 de recargo y se cobra de tu banco y luego de tu saldo</li>
+            </ol>
+          </div>
+
+          <div class="cards cards--tight">
+            <div>
+              <p class="tt">Cómo se usa</p>
+              <div class="tw"><table>
+                <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="k">$prestamo</span></td><td>Ver tu deuda o cuánto puedes pedir</td></tr>
+                  <tr><td><span class="k">$prestamo pedir cantidad</span></td><td>Pedir un préstamo</td></tr>
+                  <tr><td><span class="k">$prestamo pagar cantidad</span></td><td>Pagar una parte de la deuda</td></tr>
+                  <tr><td><span class="k">$prestamo pagar todo</span></td><td>Pagar todo lo que puedas</td></tr>
+                </tbody>
+              </table></div>
+              <div class="ex mt-sm">
+                <button type="button" class="k" data-copy="$prestamo pedir 300">$prestamo pedir 300</button>
+                <button type="button" class="k" data-copy="$prestamo pagar todo">$prestamo pagar todo</button>
+              </div>
+            </div>
+            <div>
+              <p class="tt">Reglas</p>
+              <div class="tw"><table>
+                <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+                <tbody>
+                  <tr><td>Interés</td><td>10 por ciento fijo</td></tr>
+                  <tr><td>Plazo para pagar</td><td>24 horas</td></tr>
+                  <tr><td>Préstamo mínimo</td><td>10 pavocoins</td></tr>
+                  <tr><td>Préstamo máximo</td><td>La mitad de tu saldo más tu banco, entre 100 y 5000</td></tr>
+                  <tr><td>Recargo si te pasas</td><td>10 por ciento, una sola vez</td></tr>
+                  <tr><td>Deuda vencida</td><td>Se cobra primero de tu banco y luego de tu saldo</td></tr>
+                </tbody>
+              </table></div>
+              <p class="cool mt-sm">Espera entre usos: 5 segundos por persona.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DAR ===================== -->
+  <section class="sec theme-leaf" id="dar">
+    <div class="wrap">
+      <div class="sec-head"><span class="ico" aria-hidden="true">🎁</span><h2>Dar pavocoins</h2></div>
+      <p class="sec-intro">Pasa pavocoins a otra persona del chat. Hay un comando para todos y uno que solo usa el dueño del bot.</p>
+
+      <div class="cards">
+        <article class="cmd">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$dar" title="Toca para copiar">$dar</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $give, $transferir</span>
+          </header>
+          <p class="what">Le das pavocoins de tu saldo a otra persona.</p>
+          <div>
+            <p class="tt">Cómo se usa</p>
+            <div class="tw"><table>
+              <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+              <tbody><tr><td><span class="k">$dar usuario cantidad</span></td><td>Pasa esa cantidad de tu saldo al suyo</td></tr></tbody>
+            </table></div>
+            <div class="ex mt-sm"><button type="button" class="k" data-copy="$dar @Ana 100">$dar @Ana 100</button></div>
+          </div>
+          <div>
+            <p class="tt">Reglas</p>
+            <div class="tw"><table>
+              <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+              <tbody>
+                <tr><td>Mínimo por envío</td><td>1 pavocoin</td></tr>
+                <tr><td>Máximo por envío</td><td>5000 pavocoins</td></tr>
+                <tr><td>Quién puede recibir</td><td>Alguien que haya escrito en el canal, y no tú mismo</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <p class="cool">Espera entre usos: 10 segundos por persona.</p>
+        </article>
+
+        <article class="cmd locked">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$regalar" title="Toca para copiar">$regalar</button>
+            <span class="badge b-owner">🔒 Solo el dueño del bot</span>
+          </header>
+          <p class="what">Crea pavocoins y se los entrega a alguien, sin descontarlos de ningún saldo. Nadie más puede usarlo, ni siquiera los mods.</p>
+          <div>
+            <p class="tt">Cómo se usa</p>
+            <div class="tw"><table>
+              <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+              <tbody><tr><td><span class="k">$regalar usuario cantidad</span></td><td>Regala esa cantidad</td></tr></tbody>
+            </table></div>
+            <div class="ex mt-sm"><button type="button" class="k" data-copy="$regalar @Ana 500">$regalar @Ana 500</button></div>
+          </div>
+          <p class="note">Si no eres el dueño del bot, el comando no te responde.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RAFFLE ===================== -->
+  <section class="sec theme-sky" id="raffle">
+    <div class="wrap">
+      <div class="sec-head"><span class="ico" aria-hidden="true">🎟️</span><h2>Raffle</h2></div>
+      <p class="sec-intro">Los mods abren un sorteo con un premio. Tú compras tickets con pavocoins: cuantos más tengas, más posibilidades de ganar.</p>
+
+      <div class="cards">
+        <article class="cmd">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$ticket" title="Toca para copiar">$ticket</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $tickets, $boleto</span>
+          </header>
+          <p class="what">Mira cómo va el raffle o compra tus tickets.</p>
+          <div>
+            <p class="tt">Cómo se usa</p>
+            <div class="tw"><table>
+              <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+              <tbody>
+                <tr><td><span class="k">$ticket</span></td><td>Ver el premio, el costo, tus tickets y el total</td></tr>
+                <tr><td><span class="k">$ticket cantidad</span></td><td>Comprar esa cantidad de tickets</td></tr>
+              </tbody>
+            </table></div>
+            <div class="ex mt-sm"><button type="button" class="k" data-copy="$ticket 3">$ticket 3</button></div>
+          </div>
+          <div>
+            <p class="tt">Reglas</p>
+            <div class="tw"><table>
+              <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+              <tbody>
+                <tr><td>Cuándo se puede comprar</td><td>Solo con un raffle abierto</td></tr>
+                <tr><td>Máximo por persona</td><td>Hay un límite de tickets por persona</td></tr>
+                <tr><td>Probabilidad</td><td>Más tickets, más posibilidades</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <p class="cool">Espera entre usos: 5 segundos por persona.</p>
+        </article>
+
+        <article class="cmd">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$raffle" title="Toca para copiar">$raffle</button>
+            <span class="badge b-mod">Mods y streamer</span>
+          </header>
+          <p class="what">Abre, sortea o cancela el raffle del canal.</p>
+          <div>
+            <p class="tt">Cómo se usa</p>
+            <div class="tw"><table>
+              <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+              <tbody>
+                <tr><td><span class="k">$raffle abrir [costo] [premio]</span></td><td>Abre un raffle</td></tr>
+                <tr><td><span class="k">$raffle sortear</span></td><td>Elige al ganador y cierra</td></tr>
+                <tr><td><span class="k">$raffle cancelar</span></td><td>Cancela y devuelve los pavocoins de los tickets</td></tr>
+              </tbody>
+            </table></div>
+            <div class="ex mt-sm">
+              <button type="button" class="k" data-copy="$raffle abrir">$raffle abrir</button>
+              <button type="button" class="k" data-copy="$raffle abrir 50 Un saludo en directo">$raffle abrir 50 Un saludo en directo</button>
+            </div>
+          </div>
+          <div>
+            <p class="tt">Reglas</p>
+            <div class="tw"><table>
+              <thead><tr><th>Regla</th><th>Valor</th></tr></thead>
+              <tbody>
+                <tr><td>Si no pones costo</td><td>Cada ticket vale el costo por defecto del bot</td></tr>
+                <tr><td>Si no pones premio</td><td>El premio es una sorpresa</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AYUDA ===================== -->
+  <section class="sec theme-gold" id="ayuda">
+    <div class="wrap">
+      <div class="cards">
+        <article class="cmd">
+          <header class="cmd-head">
+            <button type="button" class="syn" data-copy="$pavowiki" title="Toca para copiar">$pavowiki</button>
+            <span class="badge b-all">Todos</span>
+            <span class="alias">También: $pavoayuda, $pavohelp</span>
+          </header>
+          <p class="what">El bot te manda en el chat un link con esta misma wiki en texto.</p>
+          <p class="cool">Espera entre usos: 10 segundos por persona.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Los números de esta página son los que usa el bot ahora mismo. Si el dueño del bot los cambia, aquí pueden quedar desactualizados.</p>
+  </div>
+</footer>
+
+<!-- Orden importa: núcleo, componentes, datos y al final el arranque de la página -->
+<script defer src="assets/js/core/dom.js"></script>
+<script defer src="assets/js/core/text.js"></script>
+<script defer src="assets/js/core/toast.js"></script>
+<script defer src="assets/js/core/clipboard.js"></script>
+<script defer src="assets/js/components/fan.js"></script>
+<script defer src="assets/js/components/jump-nav.js"></script>
+<script defer src="assets/js/components/slot-demo.js"></script>
+<script defer src="assets/js/data/wiki-sections.js"></script>
+<script defer src="assets/js/pages/wiki.js"></script>
+</body>
+</html>

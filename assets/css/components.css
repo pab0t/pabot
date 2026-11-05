@@ -1,0 +1,85 @@
+/* ==========================================================================
+   components.css — piezas reutilizables: tarjeta de comando, tablas, botones,
+   chips de navegación y aviso (toast)
+   ========================================================================== */
+
+/* ---------- navegación rápida (píldoras de colores) ---------- */
+.jump { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.jump a {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: var(--c); color: var(--ink);
+  border: 3px solid var(--ink); border-radius: 999px;
+  padding: .35rem .9rem .35rem .6rem;
+  font-weight: 700; font-size: .95rem; text-decoration: none;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.jump a:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+.jump a:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+/* ---------- tarjeta de comando ---------- */
+.cmd {
+  background: var(--paper); color: var(--ink);
+  border: 3px solid var(--ink); border-radius: 22px;
+  box-shadow: inset 0 11px 0 var(--c), 7px 7px 0 var(--ink);
+  padding: 30px 22px 22px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.cmd-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+
+.syn {
+  font: 700 1.3rem "Space Mono", ui-monospace, Consolas, monospace;
+  background: var(--ink); color: var(--gold);
+  border: 0; border-radius: 12px; padding: .3rem .85rem; cursor: pointer;
+  transition: transform .12s ease;
+}
+.syn:hover { transform: translateY(-2px) rotate(-1.5deg); }
+
+.badge { font-size: .8rem; font-weight: 700; padding: .12rem .65rem; border: 2px solid var(--ink); border-radius: 999px; }
+.b-all   { background: #D3EBA3; }
+.b-mod   { background: #BFDDF6; }
+.b-owner { background: #F6B8AC; }
+
+.alias { font-size: .88rem; color: var(--muted); }
+.what  { margin: 0; font-size: 1.03rem; }
+.tt    { margin: 0 0 6px; font-weight: 700; font-size: .95rem; }
+.cool  { margin: 0; font-size: .86rem; color: var(--muted); }
+.note  { margin: 0; font-size: .92rem; padding: .55rem .8rem; background: var(--paper-3); border: 2px dashed var(--ink); border-radius: 12px; }
+
+/* ---------- tablas ---------- */
+.tw { border: 3px solid var(--ink); border-radius: 12px; overflow: hidden; overflow-x: auto; background: var(--paper-3); }
+table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+th { text-align: left; background: var(--paper-2); padding: .5rem .8rem; border-bottom: 3px solid var(--ink); font-weight: 700; }
+td { padding: .55rem .8rem; border-top: 1.5px solid rgba(43, 26, 17, .18); vertical-align: top; }
+tbody tr:first-child td { border-top: 0; }
+td:first-child { font-weight: 500; }
+
+/* ---------- código inline (.k) y botones-ejemplo ---------- */
+.k {
+  font: 700 .85rem "Space Mono", ui-monospace, Consolas, monospace;
+  background: #F0D9A0; color: var(--ink);
+  border: 0; border-radius: 7px; padding: .1rem .45rem; white-space: nowrap;
+}
+.k--wrap { white-space: normal; }
+button.k { cursor: pointer; font-size: .95rem; padding: .25rem .65rem; border: 2px solid var(--ink); background: var(--paper-3); }
+button.k:hover { background: var(--gold); }
+.ex { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ---------- botón redondeado ---------- */
+.btn {
+  font: 700 1rem "Rubik", system-ui, sans-serif; color: var(--ink); background: var(--gold);
+  border: 3px solid var(--ink); border-radius: 999px; padding: .5rem 1.3rem;
+  box-shadow: 3px 3px 0 var(--ink); cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+.btn:disabled { opacity: .6; cursor: wait; transform: none; box-shadow: 3px 3px 0 var(--ink); }
+
+/* ---------- aviso al copiar ---------- */
+#toast {
+  position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 20px);
+  background: var(--ink); color: var(--gold); border: 3px solid var(--gold); border-radius: 999px;
+  padding: .45rem 1.1rem; font: 700 .95rem "Space Mono", ui-monospace, monospace;
+  opacity: 0; pointer-events: none; transition: opacity .18s ease, transform .18s ease; z-index: 10;
+}
+#toast.on { opacity: 1; transform: translate(-50%, 0); }

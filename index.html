@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comandos del bot</title>
+<meta name="description" content="Todos los comandos del bot con sus alias, permisos y tiempos de espera.">
+<meta name="theme-color" content="#0E4A4F">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Rubik:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/fan.css">
+<link rel="stylesheet" href="assets/css/pages/commands.css">
+</head>
+<body class="page-commands">
+
+<nav class="topbar wrap" aria-label="Páginas">
+  <a class="tab" href="index.html" aria-current="page">Comandos</a>
+  <a class="tab" href="pavowiki.html">Pavowiki</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Comandos</h1>
+      <p class="lead">Todo lo que sabe hacer el bot: para qué sirve cada comando, sus alias, quién lo puede usar y cuánto hay que esperar entre usos.</p>
+      <p class="hint">Toca el nombre de un comando para copiarlo. Toca una pluma del pavo para ir a su grupo.</p>
+      <div class="ctas">
+        <a class="cta primary" href="#lista">Ver los comandos</a>
+        <a class="cta" href="pavowiki.html">Abrir la pavowiki</a>
+      </div>
+      <ul class="jump" id="jump" aria-label="Grupos de comandos"></ul>
+    </div>
+
+    <!-- El pavo lo dibuja assets/js/components/fan.js -->
+    <svg id="fan" viewBox="0 0 600 520" role="group" aria-label="Un pavo con la cola abierta. Cada pluma lleva a un grupo de comandos."></svg>
+  </div>
+</header>
+
+<main>
+  <section class="tools" id="lista" aria-label="Buscar comandos">
+    <div class="wrap">
+      <div class="tools-box">
+        <label class="field">
+          <span>Busca un comando</span>
+          <input id="q" type="search" placeholder="Escribe un nombre, un alias o una palabra" autocomplete="off" spellcheck="false">
+        </label>
+        <div class="chips" id="perm-chips" role="group" aria-label="Quién puede usarlo">
+          <span>Quién lo usa</span>
+          <button class="chip" type="button" data-perm="todos" aria-pressed="true">Todos los comandos</button>
+          <button class="chip" type="button" data-perm="all" aria-pressed="false">Cualquiera</button>
+          <button class="chip" type="button" data-perm="mod" aria-pressed="false">Mods y owner</button>
+          <button class="chip" type="button" data-perm="owner" aria-pressed="false">Solo owner</button>
+        </div>
+        <p id="count" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Las secciones y tarjetas se generan desde assets/js/data/commands.js -->
+  <div id="groups"><noscript><div class="wrap"><p>Esta página necesita JavaScript para mostrar la lista de comandos.</p></div></noscript></div>
+
+  <div id="empty" hidden>
+    <div class="wrap">
+      <p>No hay comandos que coincidan. Prueba con otro nombre o quita los filtros.</p>
+      <button class="cta primary" id="reset" type="button">Quitar los filtros</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>¿Quieres saber cómo usar los comandos de pavocoins con ejemplos y reglas? Mira la <a href="pavowiki.html">pavowiki</a>.</p>
+  </div>
+</footer>
+
+<!-- Orden importa: núcleo, componentes, datos y al final el arranque de la página -->
+<script defer src="assets/js/core/dom.js"></script>
+<script defer src="assets/js/core/text.js"></script>
+<script defer src="assets/js/core/toast.js"></script>
+<script defer src="assets/js/core/clipboard.js"></script>
+<script defer src="assets/js/components/fan.js"></script>
+<script defer src="assets/js/components/jump-nav.js"></script>
+<script defer src="assets/js/data/groups.js"></script>
+<script defer src="assets/js/data/commands.js"></script>
+<script defer src="assets/js/components/command-card.js"></script>
+<script defer src="assets/js/components/command-filter.js"></script>
+<script defer src="assets/js/pages/commands.js"></script>
+</body>
+</html>

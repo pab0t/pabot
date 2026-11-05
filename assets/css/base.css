@@ -1,0 +1,60 @@
+/* ==========================================================================
+   base.css — variables, reset, tipografía, utilidades y temas de color
+   ========================================================================== */
+
+:root {
+  --teal: #0E4A4F;
+  --ink: #2B1A11;
+  --paper: #FBEBC8;
+  --paper-2: #F3D99B;
+  --paper-3: #FFF8E6;
+  --cream: #FFF3D9;
+  --gold: #F6B93B;
+  --red: #E5493A;
+  --bronze: #C9772F;
+  --aqua: #46C2B5;
+  --leaf: #9CC24D;
+  --sky: #5BA8E8;
+  --muted: #5A3D2C;
+  --soft: #BFE3DC; /* texto secundario sobre fondo teal */
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--teal);
+  color: var(--cream);
+  font: 400 1rem/1.6 "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+h1, h2, h3 { margin: 0; }
+
+:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.cmd :focus-visible,
+.stairs :focus-visible,
+.field :focus-visible { outline-color: var(--ink); }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- utilidades (con !important para ganarle a cualquier componente) ---------- */
+.mt-sm { margin-top: 10px !important; }
+.mt-md { margin-top: 12px !important; }
+
+/* ---------- temas de color: definen --c para el elemento ---------- */
+.theme-gold   { --c: var(--gold); }
+.theme-aqua   { --c: var(--aqua); }
+.theme-red    { --c: var(--red); }
+.theme-bronze { --c: var(--bronze); }
+.theme-leaf   { --c: var(--leaf); }
+.theme-sky    { --c: var(--sky); }
+
+/* ---------- accesibilidad: menos movimiento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}

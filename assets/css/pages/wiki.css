@@ -1,0 +1,76 @@
+/* ==========================================================================
+   pages/wiki.css — solo la pavowiki (pavowiki.html)
+   ========================================================================== */
+
+.cmd.locked { border-style: dashed; }
+
+/* ---------- primer día: pasos numerados ---------- */
+.steps {
+  list-style: none; margin: 0 0 28px; padding: 0; display: grid; gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+  counter-reset: paso;
+}
+.steps li {
+  counter-increment: paso;
+  background: var(--paper); color: var(--ink);
+  border: 3px solid var(--ink); border-radius: 18px; box-shadow: 5px 5px 0 var(--ink);
+  padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px;
+}
+.steps li::before {
+  content: counter(paso);
+  font-family: "Bagel Fat One", "Arial Rounded MT Bold", system-ui, sans-serif; font-size: 1.5rem; line-height: 1;
+  display: grid; place-items: center; width: 2.4rem; height: 2.4rem;
+  background: var(--gold); border: 3px solid var(--ink); border-radius: 50%;
+}
+.steps p { margin: 0; font-size: .95rem; }
+
+/* ---------- escalera de niveles ---------- */
+.stairs {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(6, 1fr); align-items: end; gap: 8px; height: 200px;
+}
+.stairs li {
+  height: var(--h); background: var(--c);
+  border: 3px solid var(--ink); border-radius: 12px 12px 0 0;
+  padding: 6px; display: flex; flex-direction: column; justify-content: flex-end;
+  font-size: .8rem; line-height: 1.25; overflow: hidden;
+}
+.stairs b { display: block; font-size: .85rem; }
+
+/* ---------- barras de la racha ---------- */
+.barrow { display: flex; align-items: center; gap: 10px; min-width: 170px; }
+.barrow span { min-width: 2.4em; font-weight: 700; }
+.bar { display: block; height: 12px; width: var(--w); background: var(--gold); border: 2px solid var(--ink); border-radius: 8px; }
+.bar.wk { background: var(--red); }
+
+/* ---------- tragamonedas de prueba ---------- */
+.slot {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; padding: 14px;
+  background: var(--paper-3); border: 3px dashed var(--ink); border-radius: 14px;
+}
+.reels { display: flex; gap: 8px; }
+.reels span {
+  display: grid; place-items: center; width: 62px; height: 72px; font-size: 2.2rem;
+  background: #fff; border: 3px solid var(--ink); border-radius: 12px;
+}
+#slot-msg { margin: 0; flex: 1 1 200px; font-weight: 500; }
+
+/* ---------- flujo del préstamo ---------- */
+.flow {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  counter-reset: f;
+}
+.flow li { counter-increment: f; background: var(--paper-3); border: 3px solid var(--ink); border-radius: 14px; padding: 10px 12px 12px; font-size: .93rem; }
+.flow li::before { content: "Paso " counter(f); display: block; font-weight: 700; margin-bottom: 2px; }
+.flow li.bad { background: #F8C9C0; }
+
+@media (max-width: 820px) {
+  .page-wiki #fan { max-width: 430px; margin: 0 auto; }
+  .page-wiki .cmd { box-shadow: inset 0 11px 0 var(--c), 5px 5px 0 var(--ink); padding: 28px 16px 18px; }
+  .stairs { display: flex; flex-direction: column; align-items: flex-start; height: auto; gap: 8px; }
+  .stairs li {
+    height: auto; width: var(--w); min-width: 150px; border-radius: 0 12px 12px 0;
+    flex-direction: row; justify-content: space-between; align-items: center;
+  }
+}
